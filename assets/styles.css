@@ -267,3 +267,23 @@ footer{
 .footer-grid a{color:var(--muted)}
 .footer-grid a:hover{color:var(--text)}
 .note{font-size:12px;max-width:90ch}
+
+/* Bigger, cleaner skyline hero */
+.hero-photo{
+  margin: -18px;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.hero-photo img{
+  width: 100%;
+  height: 460px;      /* bigger */
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 768px){
+  .hero-photo img{ height: 260px; }
+}
