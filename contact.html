@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apply | Sunset City Capital</title>
+  <meta name="description" content="Sunset City Capital helps businesses access fast, flexible working capital.">
+  <link rel="icon" href="assets/logo.jpeg">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Sunset City Capital home">
+      <img src="assets/logo.jpeg" alt="Sunset City Capital logo">
+      <div class="title">
+        <strong>Sunset City Capital</strong>
+        <span>Business funding & finance consulting</span>
+      </div>
+    </a>
+
+    <nav class="navlinks" aria-label="Primary">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="solutions.html">Solutions</a>
+      <a data-nav href="testimonials.html">Testimonials</a>
+      <a data-nav href="contact.html">Apply</a>
+    </nav>
+
+    <div class="cta">
+      <a class="button ghost" href="mailto:zgold@sunsetcitycapital.com?subject=Question%20for%20Sunset%20City%20Capital">Email</a>
+      <a class="button primary" href="contact.html">Apply Now</a>
+      <button class="button ghost" data-menu-btn type="button" style="display:none">Menu</button>
+    </div>
+  </div>
+
+  <div class="container" data-menu-panel data-open="false" style="display:none;padding:0 0 14px">
+    <div class="card pad">
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="button" href="index.html">Home</a>
+        <a class="button" href="solutions.html">Solutions</a>
+        <a class="button" href="testimonials.html">Testimonials</a>
+        <a class="button primary" href="contact.html">Apply</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container split">
+    <div>
+      <div class="kicker"><span class="dot"></span><span>Apply</span></div>
+      <h1>Apply in minutes.</h1>
+      <p class="lead">This form opens a pre-filled email to <strong>zgold@sunsetcitycapital.com</strong>. If you prefer, you can email us directly.</p>
+      <div class="hero-actions">
+        <a class="button ghost" href="mailto:zgold@sunsetcitycapital.com?subject=Funding%20application%20-%20Sunset%20City%20Capital">Email instead</a>
+        <a class="button" href="solutions.html">See solutions</a>
+      </div>
+
+      <div class="stats" style="margin-top:18px">
+        <div class="stat"><strong>Simple</strong><span>No portals</span></div>
+        <div class="stat"><strong>Fast</strong><span>Quick responses</span></div>
+        <div class="stat"><strong>Secure</strong><span>No data stored here</span></div>
+      </div>
+    </div>
+
+    <div class="card pad">
+      <h3>Application</h3>
+      <form id="contactForm">
+        <div class="form-row">
+          <div>
+            <label for="name">Full name</label>
+            <input id="name" name="name" required placeholder="Your name">
+          </div>
+          <div>
+            <label for="company">Company</label>
+            <input id="company" name="company" placeholder="Business name">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" placeholder="(555) 555-5555">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="amount">Requested amount</label>
+            <input id="amount" name="amount" placeholder="$50,000">
+          </div>
+          <div>
+            <label for="product">Interested in</label>
+            <select id="product" name="product">
+              <option value="Not sure yet">Not sure yet</option>
+              <option value="Term Loan">Term Loan</option>
+              <option value="Line of Credit">Line of Credit</option>
+              <option value="Equipment Financing">Equipment Financing</option>
+              <option value="Invoice Factoring">Invoice Factoring</option>
+              <option value="Working Capital">Working Capital</option>
+              <option value="Cash Advance">Cash Advance</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="message">Notes / What are you trying to accomplish?</label>
+          <textarea id="message" name="message" placeholder="Tell us what you need and your timeline..."></textarea>
+        </div>
+
+        <button class="button primary" type="submit">Send application</button>
+        <p class="small">Submitting opens your email client with your info pre-filled.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <img src="assets/logo.jpeg" alt="" style="width:34px;height:34px;border-radius:12px;background:#fff">
+        <div>
+          <div style="font-weight:800;color:#fff">Sunset City Capital</div>
+          <div style="font-size:12px">Business funding & finance consulting</div>
+        </div>
+      </div>
+      <p class="note" style="margin-top:10px">
+        This website is for informational purposes only and does not constitute a commitment to lend.
+        Funding is subject to underwriting and approval.
+      </p>
+    </div>
+    <div style="display:grid;gap:8px">
+      <a href="solutions.html">Solutions</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Apply</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="cookies.html">Cookies</a>
+    </div>
+    <div style="display:grid;gap:8px">
+      <a href="mailto:zgold@sunsetcitycapital.com">zgold@sunsetcitycapital.com</a>
+      <span style="font-size:12px">© <span id="y"></span> Sunset City Capital</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script>
+  // show menu button on small screens
+  (function(){
+    const mq = window.matchMedia('(max-width: 900px)');
+    const btn = document.querySelector('[data-menu-btn]');
+    const nav = document.querySelector('.navlinks');
+    function sync(){
+      if(!btn || !nav) return;
+      if(mq.matches){ btn.style.display='inline-flex'; }
+      else{ btn.style.display='none'; }
+    }
+    sync(); mq.addEventListener('change', sync);
+  })();
+</script>
+</body>
+</html>
