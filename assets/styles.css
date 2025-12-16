@@ -16,13 +16,9 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  background:
-    radial-gradient(900px 360px at 18% -10%, rgba(255,179,71,.28), transparent 60%),
-    radial-gradient(900px 360px at 72% -10%, rgba(255,107,107,.22), transparent 60%),
-    radial-gradient(900px 520px at 50% 105%, rgba(177,76,255,.14), transparent 60%),
-    var(--bg);
-  color:var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background: #ffffff;
+  color: var(--text);
   line-height:1.55;
 }
 
@@ -106,12 +102,12 @@ h1{
   background: rgba(255,255,255,.03);
   color:var(--muted);font-size:12px;
 }
-
 .card{
-  border:1px solid var(--line);
-  background: rgba(17,18,26,.72);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  border:1px solid #e5e7eb;
+  background:#ffffff;
+  border-radius:18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
 }
 .card.pad{padding:18px}
 .card h3{margin:0 0 8px;font-size:18px}
