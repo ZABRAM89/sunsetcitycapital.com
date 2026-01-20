@@ -305,3 +305,36 @@ footer .sms-optin-wrap{
   font-size:13px;
   color:var(--muted);
 }
+/* Apply form */
+.apply-form{display:grid; gap:12px}
+.field{display:grid; gap:8px}
+.field label{font-size:13px; color:var(--text); font-weight:650}
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  padding:12px 12px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  outline:none;
+  font-size:15px;
+  color:var(--text);
+  background:#fff;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color: var(--sunset2);
+  box-shadow: 0 0 0 3px rgba(249,115,22,.15);
+}
+
+.consent-row{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  font-size:13px;
+  color:var(--text);
+  line-height:1.35;
+}
+.consent-row input{margin-top:3px}
+
