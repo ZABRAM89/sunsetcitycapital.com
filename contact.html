@@ -36,75 +36,140 @@
 <main>
 
 <section class="hero">
-  <div class="container split">
-    <div>
-      <div class="kicker"><span class="dot"></span><span>Apply</span></div>
-      <h1>Apply in minutes.</h1>
-      <p class="lead">
-        This form opens a pre-filled email draft with your info so you can send it securely from your own device.
-        (No data is stored on this website.)
-      </p>
-
-      <div class="bubbles">
-        <div class="bubble"><span class="badge-dot"></span>Simple</div>
-        <div class="bubble"><span class="badge-dot"></span>Fast</div>
-        <div class="bubble"><span class="badge-dot"></span>No portals</div>
-      </div>
-    </div>
-
-    <div class="card pad">
-      <h3>Application</h3>
-
-      <form id="applyForm">
-        <div style="display:grid; gap:10px">
-          <label>Full name</label>
-          <input name="name" required placeholder="Your name">
-
-          <label>Company</label>
-          <input name="company" placeholder="Business name">
-
-          <label>Phone</label>
-          <input name="phone" placeholder="(555) 555-5555">
-
-          <label>Your email</label>
-          <input name="email" type="email" placeholder="you@company.com">
-
-          <label>Requested amount</label>
-          <input name="amount" placeholder="$50,000">
-
-          <label>Interested in</label>
-          <select name="product">
-            <option value="Not sure yet">Not sure yet</option>
-            <option value="Term Loan">Term Loan</option>
-            <option value="Line of Credit">Line of Credit</option>
-            <option value="Equipment Financing">Equipment Financing</option>
-            <option value="Invoice Factoring">Invoice Factoring</option>
-            <option value="Working Capital">Working Capital</option>
-            <option value="Cash Advance">Cash Advance</option>
-          </select>
-
-          <label>Notes / What are you trying to accomplish?</label>
-          <textarea name="message" placeholder="Tell us what you need and your timeline..."></textarea>
-
-          <button class="button primary" type="submit">Send Application</button>
-
-          <p class="small">Submitting opens your email client with the message pre-filled.</p>
-        </div>
-      </form>
-    </div>
+  <div class="container">
+    <div class="kicker"><span class="dot"></span><span>Apply</span></div>
+    <h1>Apply in minutes</h1>
+    <p class="lead">
+      Tell us what you’re looking for and we’ll follow up quickly with next steps and options.
+    </p>
   </div>
 </section>
 
 <section>
-  <div class="container">
+  <div class="container split">
+
     <div class="card pad">
-      <h3>What happens next?</h3>
-      <div class="grid" style="margin-top:12px">
-        <div class="item"><h4>1) Review</h4><p>We review your goal and timeline quickly.</p></div>
-        <div class="item"><h4>2) Options</h4><p>We respond with possible solutions and next steps.</p></div>
-        <div class="item"><h4>3) Move forward</h4><p>You choose the option that fits best.</p></div>
+      <h3>Application</h3>
+      <p class="small" style="margin-bottom:14px">
+        Provide a few details below. Funding is subject to approval.
+      </p>
+
+      <!-- Static-site friendly: mailto submit -->
+      <form id="applyForm" class="apply-form"
+        action="mailto:docs@aaabizassist.com"
+        method="POST"
+        enctype="text/plain"
+      >
+        <div class="field">
+          <label for="fullName">Full name</label>
+          <input id="fullName" name="Full Name" type="text" placeholder="John Smith" required>
+        </div>
+
+        <div class="field">
+          <label for="businessName">Business name</label>
+          <input id="businessName" name="Business Name" type="text" placeholder="ABC Services LLC" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="Email" type="email" placeholder="you@business.com" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">Mobile phone</label>
+          <input id="phone" name="Phone" type="tel" inputmode="tel" autocomplete="tel"
+                 placeholder="(555) 555-5555" required>
+
+          <!-- 10DLC-friendly disclosure near phone collection -->
+          <p class="small" style="margin-top:8px">
+            By providing your phone number, you may receive SMS/text messages from Sunset City Capital related to your inquiry,
+            application status, and service communications. Message frequency varies. Msg &amp; data rates may apply.
+            Reply <strong>STOP</strong> to opt out, <strong>HELP</strong> for help. Consent is not a condition of purchase or funding approval.
+          </p>
+        </div>
+
+        <div class="field">
+          <label for="amount">Funding amount requested</label>
+          <select id="amount" name="Funding Amount Requested" required>
+            <option value="" disabled selected>Select a range</option>
+            <option>$5,000 – $25,000</option>
+            <option>$25,000 – $75,000</option>
+            <option>$75,000 – $150,000</option>
+            <option>$150,000 – $300,000</option>
+            <option>$300,000+</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="timeline">When do you need funds?</label>
+          <select id="timeline" name="Timeline" required>
+            <option value="" disabled selected>Select one</option>
+            <option>ASAP (0–7 days)</option>
+            <option>1–2 weeks</option>
+            <option>2–4 weeks</option>
+            <option>Just exploring</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="product">What are you interested in?</label>
+          <select id="product" name="Product Interest" required>
+            <option value="" disabled selected>Select one</option>
+            <option>Term Loan</option>
+            <option>Line of Credit</option>
+            <option>Equipment Financing</option>
+            <option>Invoice Factoring</option>
+            <option>Working Capital</option>
+            <option>Cash Advance</option>
+            <option>Not sure / Need guidance</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="notes">Anything else we should know?</label>
+          <textarea id="notes" name="Notes" rows="5" placeholder="Use this space for details (industry, monthly revenue, purpose, etc.)"></textarea>
+        </div>
+
+        <!-- Explicit checkbox consent (best practice) -->
+        <label class="consent-row">
+          <input id="smsConsent" name="SMS Consent" type="checkbox" required>
+          <span>
+            I agree to receive SMS/text messages from <strong>Sunset City Capital</strong>. Consent is not a condition of purchase or funding approval.
+          </span>
+        </label>
+
+        <p class="note" style="margin:0">
+          Message frequency varies. Msg &amp; data rates may apply. Reply <strong>STOP</strong> to opt out, <strong>HELP</strong> for help.
+          See our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms</a>.
+        </p>
+
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+          <button class="button primary" type="submit">Submit Application</button>
+          <a class="button" href="index.html">Back to Home</a>
+        </div>
+
+        <p id="applyStatus" class="note" style="margin-top:12px"></p>
+      </form>
+    </div>
+
+    <div class="card pad">
+      <h3>What happens next</h3>
+      <div style="display:grid; gap:10px; margin-top:10px">
+        <div class="item"><h4>1) Review</h4><p>We look at your timeline and needs.</p></div>
+        <div class="item"><h4>2) Options</h4><p>We present funding solutions with clear tradeoffs.</p></div>
+        <div class="item"><h4>3) Move forward</h4><p>Choose the best fit and proceed.</p></div>
+      </div>
+
+      <div style="margin-top:16px">
+        <h3 style="margin-bottom:8px">Prefer to talk first?</h3>
+        <p class="small">Call us and we’ll walk you through the best options.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
+          <a class="button" href="tel:+14086002408">(408) 600-2408</a>
+          <a class="button" href="mailto:docs@aaabizassist.com">docs@aaabizassist.com</a>
+        </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -119,42 +184,19 @@
     <div style="display:grid; gap:8px">
       <a href="index.html">Home</a>
       <a href="solutions.html">Solutions</a>
-      <a href="testimonials.html">Testimonials</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="cookies.html">Cookies</a>
     </div>
   </div>
 </footer>
 
 <script>
-  (function(){
-    const form = document.getElementById('applyForm');
-    if(!form) return;
-
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      const data = new FormData(form);
-
-      const name = (data.get('name')||'').toString().trim();
-      const company = (data.get('company')||'').toString().trim();
-      const phone = (data.get('phone')||'').toString().trim();
-      const email = (data.get('email')||'').toString().trim();
-      const amount = (data.get('amount')||'').toString().trim();
-      const product = (data.get('product')||'').toString().trim();
-      const message = (data.get('message')||'').toString().trim();
-
-      const subject = encodeURIComponent('Funding inquiry - Sunset City Capital');
-      const body = encodeURIComponent(
-        'Name: ' + name + '\\n' +
-        'Company: ' + company + '\\n' +
-        'Phone: ' + phone + '\\n' +
-        'Email: ' + email + '\\n' +
-        'Requested amount: ' + amount + '\\n' +
-        'Interested in: ' + product + '\\n\\n' +
-        'Notes:\\n' + message
-      );
-
-      window.location.href = 'mailto:zgold@sunsetcitycapital.com?subject=' + subject + '&body=' + body;
-    });
-  })();
+  // Small UX note for the mailto form (works on static sites)
+  document.getElementById("applyForm").addEventListener("submit", function () {
+    const status = document.getElementById("applyStatus");
+    status.textContent = "Submitting… If an email draft opens, please hit Send to complete your application.";
+  });
 </script>
 
 </body>
