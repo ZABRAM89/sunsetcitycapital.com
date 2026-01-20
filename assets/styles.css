@@ -42,13 +42,27 @@ header{
   display:flex; align-items:center; justify-content:space-between;
   padding:14px 0;
 }
+
+/* Center brand on desktop */
+@media (min-width: 901px){
+  header .container.nav{ position:relative; }
+  .brand{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+  }
+}
+
 .brand{display:flex; gap:12px; align-items:center}
+
+/* Bigger logo */
 .brand img{
-  width:44px; height:44px;
-  border-radius:12px;
+  width:56px; height:56px;
+  border-radius:14px;
   background:#fff;
   object-fit:contain;
 }
+
 .brand .title{display:flex; flex-direction:column; line-height:1.1}
 .brand .title strong{font-size:15px; letter-spacing:.2px}
 .brand .title span{font-size:12px; color:var(--muted)}
@@ -128,8 +142,9 @@ section{padding:46px 0}
 .card p{margin:0; color:var(--muted)}
 .small{font-size:13px; color:var(--muted)}
 
-/* Hero */
-.hero{padding:56px 0 24px}
+/* Hero (slightly tighter) */
+.hero{padding:48px 0 28px}
+
 .hero-grid{
   display:grid;
   grid-template-columns: 1.1fr .9fr;
